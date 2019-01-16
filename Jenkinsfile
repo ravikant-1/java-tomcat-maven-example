@@ -20,10 +20,10 @@ node{
       }  
    
       stage('Publish Docker Image'){
-         withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerPWD')]) {
-              sh "docker login -u dockerpwdravikant -p ${dockerPWD}"
+         withCredentials([string(credentialsId: 'dockerpwdravikant', variable: 'dockerPWDravikant')]) {
+              sh "docker login -u rajnikhattarrsinha -p ${dockerPWDravikant}"
          }
-        sh 'docker push dockerpwdravikant/tomcatdocker09:2.0.0'
+        sh 'docker push rajnikhattarrsinha/tomcatdocker09:2.0.0'
       }
 
        stage('Stop running containers'){        
